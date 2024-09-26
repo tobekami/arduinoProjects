@@ -1,25 +1,17 @@
-#define MOTOR_PIN1 5
-#define MOTOR_PIN2 6
+// Motor connected to pin 9
+int motorPin = 9;
 
 void setup() {
-  pinMode(MOTOR_PIN1, OUTPUT);
-  pinMode(MOTOR_PIN2, OUTPUT);
+  // Set motor pin as output
+  pinMode(motorPin, OUTPUT);
 }
 
 void loop() {
-  analogWrite(MOTOR_PIN1, 255); // Full speed forward
-  analogWrite(MOTOR_PIN2, 0);
-  delay(2000); // Run motor forward for 2 seconds
+  // Turn the motor ON
+  digitalWrite(motorPin, HIGH);
+  delay(2000); // Motor runs for 2 seconds
 
-  analogWrite(MOTOR_PIN1, 0); // Stop motor
-  analogWrite(MOTOR_PIN2, 0);
-  delay(1000);
-
-  analogWrite(MOTOR_PIN1, 0); // Full speed backward
-  analogWrite(MOTOR_PIN2, 255);
-  delay(2000); // Run motor backward for 2 seconds
-
-  analogWrite(MOTOR_PIN1, 0); // Stop motor
-  analogWrite(MOTOR_PIN2, 0);
-  delay(1000);
+  // Turn the motor OFF
+  digitalWrite(motorPin, LOW);
+  delay(2000); // Motor stops for 2 seconds
 }
